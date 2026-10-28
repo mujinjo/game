@@ -1,12 +1,12 @@
 # Story 001: 마우스 조준 + 클릭 타이밍 타격
 
 > **Epic**: 싸발적인 투타대결
-> **Status**: Ready
+> **Status**: In Progress
 > **Layer**: Core
 > **Type**: Logic
 > **Estimate**: L
 > **Manifest Version**: N/A (minimal — no control manifest)
-> **Last Updated**: —
+> **Last Updated**: 2026-10-28
 
 ## Context
 
