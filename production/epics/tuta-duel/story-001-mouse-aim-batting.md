@@ -58,12 +58,11 @@
 
 ## Files
 
+- `src/config/balance_config.gd`
+- `assets/data/balance_default.tres`
 - `src/batting/swing_judge.gd`
-- `src/batting/batter_view.gd`, `src/batting/batter_view.tscn`
-- `src/config/balance_config.gd`, `assets/data/balance_default.tres`
-- `tests/unit/batting/swing_judgement_test.gd`
-
----
+- `src/batting/batter_view.gd`
+- `src/batting/batter_view.tscn`
 
 ## QA Test Cases
 
