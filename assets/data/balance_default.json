@@ -5,7 +5,9 @@
     "late_grace_seconds": 0.25,
     "result_display_seconds": 1.3,
     "interval_seconds": 0.9,
-    "arrival_jitter_x": 0.25
+    "arrival_jitter_x": 0.25,
+    "windup_seconds": 0.9,
+    "follow_through_seconds": 0.4
   },
   "timing_windows": {
     "_doc": "Upper bound of |swing time - ball arrival time| for each grade, best first. Anything slower than foul is a whiff.",
@@ -27,12 +29,24 @@
   },
   "outcomes": {
     "_doc": "Result for each swing type at each timing grade after the match adjustment. A grade of foul is always a foul.",
-    "upper": { "perfect": "home_run", "good": "double", "ok": "flyout" },
-    "level": { "perfect": "double", "good": "single", "ok": "flyout" },
-    "down": { "perfect": "single", "good": "single", "ok": "groundout" }
+    "upper": {
+      "perfect": "home_run",
+      "good": "double",
+      "ok": "flyout"
+    },
+    "level": {
+      "perfect": "double",
+      "good": "single",
+      "ok": "flyout"
+    },
+    "down": {
+      "perfect": "single",
+      "good": "single",
+      "ok": "groundout"
+    }
   },
   "layout": {
-    "_doc": "Positions as fractions of canvas width (x) and height (y); sizes as fractions of canvas height.",
+    "_doc": "Positions as fractions of canvas width (x) and height (y); sizes as fractions of canvas height. Character sizes use a unit of min(canvas height, canvas width * character_unit_width_ratio) so they fit portrait screens.",
     "pitcher_x": 0.5,
     "pitcher_y": 0.24,
     "zone_center_x": 0.5,
@@ -41,6 +55,69 @@
     "zone_height": 0.3,
     "ball_radius": 0.022,
     "ball_scale_start": 0.25,
-    "ball_scale_end": 1.0
+    "ball_scale_end": 1.0,
+    "pitcher_height": 0.13,
+    "character_unit_width_ratio": 1.6,
+    "batter_height": 0.62,
+    "batter_offset_zone_widths": 0.5,
+    "batter_min_x": 0.14,
+    "bat_length": 0.48
+  },
+  "animation": {
+    "_doc": "Character animation timing (story-008). swing_contact_fraction is the share of swing_seconds before the bat reaches the zone.",
+    "swing_seconds": 0.3,
+    "swing_contact_fraction": 0.4,
+    "hit_flight_seconds": 1.0
+  },
+  "hit_flight": {
+    "_doc": "Batted-ball flight per result: dx/dy move from the contact point and arc lifts the middle of the path, all as fractions of canvas height (negative dy = up the screen, toward the outfield); scale_end is the ball size at the end relative to its size at contact.",
+    "home_run": {
+      "dx": 0.08,
+      "dy": -0.8,
+      "arc": 0.25,
+      "scale_end": 0.08
+    },
+    "double": {
+      "dx": 0.3,
+      "dy": -0.45,
+      "arc": 0.15,
+      "scale_end": 0.2
+    },
+    "single": {
+      "dx": -0.22,
+      "dy": -0.35,
+      "arc": 0.08,
+      "scale_end": 0.25
+    },
+    "flyout": {
+      "dx": -0.05,
+      "dy": -0.42,
+      "arc": 0.3,
+      "scale_end": 0.2
+    },
+    "groundout": {
+      "dx": 0.12,
+      "dy": -0.3,
+      "arc": 0.0,
+      "scale_end": 0.3
+    },
+    "foul": {
+      "dx": 0.9,
+      "dy": -0.25,
+      "arc": 0.1,
+      "scale_end": 0.5
+    },
+    "whiff": {
+      "dx": 0.0,
+      "dy": 0.3,
+      "arc": 0.0,
+      "scale_end": 2.2
+    },
+    "no_swing": {
+      "dx": 0.0,
+      "dy": 0.3,
+      "arc": 0.0,
+      "scale_end": 2.2
+    }
   }
 }

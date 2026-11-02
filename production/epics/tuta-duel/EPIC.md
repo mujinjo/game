@@ -32,3 +32,4 @@ The brief's Build order: swipe batting first (proves the fun), then count and ju
 | 005 | 이닝 진행 — 아웃·주자·점수·공수 교대 | Logic | Ready | N/A (minimal) |
 | 006 | HUD + 시작/결과 화면 | UI | Ready | N/A (minimal) |
 | 007 | 밸런스 데이터 완성 + 난이도 프리셋 | Config/Data | Ready | N/A (minimal) |
+| 008 | 투수·타자 그래픽 + 애니메이션 | Visual/Feel | In Progress | N/A (minimal) |

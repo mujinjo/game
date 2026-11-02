@@ -5,7 +5,7 @@
 /** Path of the default balance file, relative to index.html. */
 export const DEFAULT_CONFIG_PATH = 'assets/data/balance_default.json';
 
-const REQUIRED_SECTIONS = ['pitch', 'timing_windows', 'swipe', 'ideal_swing', 'outcomes', 'layout'];
+const REQUIRED_SECTIONS = ['pitch', 'timing_windows', 'swipe', 'ideal_swing', 'outcomes', 'layout', 'animation', 'hit_flight'];
 
 /**
  * Fetches the balance JSON and checks that every section the game reads exists.
