@@ -17,7 +17,7 @@
 **ADR Decision Summary**: N/A (minimal — no ADRs)
 **ADR Version**: N/A (minimal — no ADRs)
 
-**Engine**: Godot 4.7 | **Risk**: HIGH
+**Engine**: Web (Canvas 2D, no engine) | **Risk**: LOW
 **Engine Notes**: none (no ADR engine-compatibility analysis at minimal)
 
 **Control Manifest Rules (this layer)**: N/A (minimal — no control manifest)
@@ -40,7 +40,7 @@
 ## Implementation Notes
 
 - `PitcherController` / `BatterController` 기반 클래스 + `Human*` / `Cpu*` 구현
-- 조작기는 신호(signal)로 결정을 알리고, 게임 흐름은 어느 구현인지 모른다
+- 조작기는 콜백(`onPitchChosen` 등)으로 결정을 알리고, 게임 흐름은 어느 구현인지 모른다
 - 2인 대전은 나중에 두 번째 `Human*` 구현(다른 입력 장치)을 꽂는 것으로 끝나야 한다
 
 ---
@@ -55,9 +55,9 @@
 
 ## Files
 
-- `src/controllers/pitcher_controller.gd`, `src/controllers/batter_controller.gd`
-- `src/controllers/cpu_pitcher.gd`, `src/controllers/cpu_batter.gd`, `src/controllers/human_batter.gd`
-- `tests/unit/ai/cpu_controller_test.gd`
+- `src/controllers/pitcher_controller.js`, `src/controllers/batter_controller.js`
+- `src/controllers/cpu_pitcher.js`, `src/controllers/cpu_batter.js`, `src/controllers/human_batter.js`
+- `tests/unit/ai/cpu_controller_test.js`
 
 ---
 
@@ -72,7 +72,7 @@
 *`qa.level: minimal` — tests are advisory.*
 
 **Story Type**: Logic
-**Required evidence**: `tests/unit/ai/cpu_controller_test.gd` (advisory)
+**Required evidence**: `tests/unit/ai/cpu_controller_test.js` (advisory)
 
 **Status**: [ ] Not yet created
 

@@ -17,7 +17,7 @@
 **ADR Decision Summary**: N/A (minimal — no ADRs)
 **ADR Version**: N/A (minimal — no ADRs)
 
-**Engine**: Godot 4.7 | **Risk**: HIGH
+**Engine**: Web (Canvas 2D, no engine) | **Risk**: LOW
 **Engine Notes**: none (no ADR engine-compatibility analysis at minimal)
 
 **Control Manifest Rules (this layer)**: N/A (minimal — no control manifest)
@@ -39,7 +39,7 @@
 
 ## Implementation Notes
 
-- `HumanPitcher`는 `PitcherController`를 구현하고, UI에서 받은 선택을 신호로 내보낸다
+- `HumanPitcher`는 `PitcherController`를 구현하고, UI에서 받은 선택을 콜백으로 알린다
 - 마우스와 터치 모두 한 번의 탭으로 동작해야 한다 (호버 전용 동작 금지)
 
 ---
@@ -53,9 +53,9 @@
 
 ## Files
 
-- `src/controllers/human_pitcher.gd`
-- `src/pitching/pitch_select_ui.gd`, `src/pitching/pitch_select_ui.tscn`
-- `tests/integration/pitching/player_pitch_test.gd`
+- `src/controllers/human_pitcher.js`
+- `src/pitching/pitch_select_ui.js`
+- `tests/integration/pitching/player_pitch_test.js`
 
 ---
 
@@ -70,7 +70,7 @@
 *`qa.level: minimal` — tests are advisory.*
 
 **Story Type**: Integration
-**Required evidence**: `tests/integration/pitching/player_pitch_test.gd` OR playtest doc (advisory); retained screenshot of the pitch-select screen in `production/qa/evidence/`
+**Required evidence**: `tests/integration/pitching/player_pitch_test.js` OR playtest doc (advisory); retained screenshot of the pitch-select screen in `production/qa/evidence/`
 
 **Status**: [ ] Not yet created
 

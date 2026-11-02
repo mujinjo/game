@@ -10,10 +10,10 @@
 
 ## Engine & Language
 
-- **Engine**: Godot 4.7
-- **Language**: GDScript
-- **Rendering**: Mobile (2D; PC + mobile target — revisit if the game moves to 3D)
-- **Physics**: Godot Physics 2D
+- **Engine**: None — Web (HTML5 Canvas 2D, no engine)
+- **Language**: JavaScript (ES modules, no framework)
+- **Rendering**: Canvas 2D (revisit — e.g. Three.js — if the game moves to 3D)
+- **Physics**: None (ball flight is scripted)
 
 ## Input & Platform
 
@@ -29,12 +29,12 @@
 
 ## Naming Conventions
 
-- **Classes**: PascalCase (e.g., `PlayerController`)
-- **Variables**: snake_case (e.g., `move_speed`)
-- **Signals/Events**: snake_case past tense (e.g., `health_changed`)
-- **Files**: snake_case matching class (e.g., `player_controller.gd`)
-- **Scenes/Prefabs**: snake_case matching the file (e.g., `player_controller.tscn`)
-- **Constants**: UPPER_SNAKE_CASE (e.g., `MAX_HEALTH`)
+- **Classes**: PascalCase (e.g., `BatterView`)
+- **Variables**: camelCase (e.g., `ballSpeed`)
+- **Signals/Events**: callback props named `on<Event>` (e.g., `onSwingResolved`)
+- **Files**: snake_case (e.g., `swing_judge.js`)
+- **Scenes/Prefabs**: n/a — views are JS modules
+- **Constants**: UPPER_SNAKE_CASE (e.g., `SWING_TYPES`)
 
 ## Performance Budgets
 
@@ -45,7 +45,7 @@
 
 ## Testing
 
-- **Framework**: gdUnit4
+- **Framework**: Node built-in test runner (`node --test 'tests/**/*_test.js'`)
 - **Minimum Coverage**: [TO BE CONFIGURED]
 - **Required Tests**: Balance formulas, gameplay systems, networking (if applicable)
 
@@ -66,27 +66,21 @@
 
 ## Engine Specialists
 
-<!-- Written by /setup-engine when engine is configured. -->
-<!-- Read by /code-review, /architecture-decision, /architecture-review, and team skills -->
-<!-- to know which specialist to spawn for engine-specific validation. -->
+<!-- No engine: the game is plain browser JavaScript. -->
 
-- **Primary**: godot-specialist
-- **Language/Code Specialist**: godot-gdscript-specialist (all .gd files)
-- **Shader Specialist**: godot-shader-specialist (.gdshader files, VisualShader resources)
-- **UI Specialist**: godot-specialist (no dedicated UI specialist — primary covers all UI)
-- **Additional Specialists**: godot-gdextension-specialist (GDExtension / native C++ bindings only)
-- **Routing Notes**: Invoke primary for architecture decisions, ADR validation, and cross-cutting code review. Invoke GDScript specialist for code quality, signal architecture, static typing enforcement, and GDScript idioms. Invoke shader specialist for material design and shader code. Invoke GDExtension specialist only when native extensions are involved.
+- **Primary**: gameplay-programmer
+- **Language/Code Specialist**: gameplay-programmer (all .js files)
+- **Shader Specialist**: technical-artist
+- **UI Specialist**: ui-programmer
+- **Additional Specialists**: none
+- **Routing Notes**: No engine specialist applies. Use gameplay-programmer for game logic, ui-programmer for HUD/screens.
 
 ### File Extension Routing
 
-<!-- Skills use this table to select the right specialist per file type. -->
-<!-- If a row says [TO BE CONFIGURED], fall back to Primary for that file type. -->
-
 | File Extension / Type | Specialist to Spawn |
 |-----------------------|---------------------|
-| Game code (.gd files) | godot-gdscript-specialist |
-| Shader / material files (.gdshader, VisualShader) | godot-shader-specialist |
-| UI / screen files (Control nodes, CanvasLayer) | godot-specialist |
-| Scene / prefab / level files (.tscn, .tres) | godot-specialist |
-| Native extension / plugin files (.gdextension, C++) | godot-gdextension-specialist |
-| General architecture review | godot-specialist |
+| Game code (.js files) | gameplay-programmer |
+| Shader / material files | technical-artist |
+| UI / screen files (HUD, screens) | ui-programmer |
+| Data files (.json) | gameplay-programmer |
+| General architecture review | lead-programmer |

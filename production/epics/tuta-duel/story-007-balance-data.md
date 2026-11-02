@@ -17,7 +17,7 @@
 **ADR Decision Summary**: N/A (minimal — no ADRs)
 **ADR Version**: N/A (minimal — no ADRs)
 
-**Engine**: Godot 4.7 | **Risk**: HIGH
+**Engine**: Web (Canvas 2D, no engine) | **Risk**: LOW
 **Engine Notes**: none (no ADR engine-compatibility analysis at minimal)
 
 **Control Manifest Rules (this layer)**: N/A (minimal — no control manifest)
@@ -38,7 +38,7 @@
 
 ## Implementation Notes
 
-- Story 001에서 만든 `BalanceConfig`를 확장한다
+- Story 001에서 만든 `assets/data/balance_default.json`과 로더를 확장한다
 - 난이도 선택 UI는 MVP 밖 — 프리셋 경로는 설정값으로 지정
 
 ---
@@ -51,9 +51,9 @@
 
 ## Files
 
-- `src/config/balance_config.gd`
-- `assets/data/balance_default.tres`
-- `assets/data/difficulty/easy.tres`, `normal.tres`, `hard.tres`
+- `src/config/balance_config.js`
+- `assets/data/balance_default.json`
+- `assets/data/difficulty_easy.json`, `difficulty_normal.json`, `difficulty_hard.json`
 
 ---
 

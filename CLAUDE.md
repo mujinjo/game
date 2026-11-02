@@ -5,11 +5,11 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
 
 ## Technology Stack
 
-- **Engine**: Godot 4.7
-- **Language**: GDScript
+- **Engine**: None — Web (HTML5 Canvas 2D, no engine)
+- **Language**: JavaScript (ES modules, no framework)
 - **Version Control**: Git with trunk-based development
-- **Build System**: SCons (engine), Godot Export Templates
-- **Asset Pipeline**: Godot Import System + custom resource pipeline
+- **Build System**: None — static files served as-is
+- **Asset Pipeline**: Plain files under `assets/` (JSON data, images, audio)
 
 > **Note**: Engine-specialist agents exist for Godot, Unity, and Unreal with
 > dedicated sub-specialists. Use the set matching your engine.
@@ -26,7 +26,7 @@ Each agent owns a specific domain, enforcing separation of concerns and quality.
      session. It defaults to Godot (the template's example engine); skills that
      need the pinned version read docs/engine-reference/<engine>/VERSION.md on
      demand regardless of this import. -->
-@docs/engine-reference/godot/VERSION.md
+Not applicable — the game is plain browser JavaScript with no engine.
 
 
 ## Technical Preferences

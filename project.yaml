@@ -37,34 +37,32 @@ performance:
   frame_budget_ms: 16.6
 
 testing:
-  framework: gdunit4
+  framework: node-test
 
 engine:
-  name: "Godot"
-  version: "4.7"
-  language: "GDScript"
-  # rendering: PC + mobile 2D; revisit via /settings if the game moves to 3D
-  rendering: "Mobile"
-  physics: "Godot Physics 2D"
+  name: "Web"
+  version: "ES2022"
+  language: "JavaScript"
+  rendering: "Canvas 2D"
+  physics: "None"
 
 specialists:
-  code: "godot-gdscript-specialist"
-  shader: "godot-shader-specialist"
-  ui: "godot-specialist"
-  additional: ["godot-gdextension-specialist"]
+  code: "gameplay-programmer"
+  shader: "technical-artist"
+  ui: "ui-programmer"
+  additional: []
 
 naming:
   classes: PascalCase
-  variables: snake_case
+  variables: camelCase
   constants: SCREAMING_SNAKE
-  signals: past_tense
+  signals: on_event_name
   files: snake_case
   scenes: snake_case
 
-# TODO: godot is not on PATH here — set the editor's full path via /settings
 commands:
-  # build: no export preset yet — set once export_presets.cfg exists
+  # build: static site — nothing to build
   build: "[TO BE CONFIGURED]"
-  test: "godot --headless -s -d --remote-debug tcp://127.0.0.1:0 res://addons/gdUnit4/bin/GdUnitCmdTool.gd -a res://tests --ignoreHeadlessMode"
-  run: "godot --path . --windowed --resolution 1280x720"
-  smoke: "godot --headless --quit-after 5"
+  test: "node --test 'tests/**/*_test.js'"
+  run: "python3 -m http.server 8000"
+  smoke: "node --test 'tests/**/*_test.js'"

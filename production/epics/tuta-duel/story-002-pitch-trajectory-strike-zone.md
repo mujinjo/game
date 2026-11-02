@@ -17,7 +17,7 @@
 **ADR Decision Summary**: N/A (minimal — no ADRs)
 **ADR Version**: N/A (minimal — no ADRs)
 
-**Engine**: Godot 4.7 | **Risk**: HIGH
+**Engine**: Web (Canvas 2D, no engine) | **Risk**: LOW
 **Engine Notes**: none (no ADR engine-compatibility analysis at minimal)
 
 **Control Manifest Rules (this layer)**: N/A (minimal — no control manifest)
@@ -33,14 +33,14 @@
 - [ ] 도착 위치가 스트라이크존 안이면 스트라이크, 밖이면 볼로 판정한다 (노스윙 시)
 - [ ] 헛스윙은 스트라이크, 파울은 2스트라이크 미만일 때만 스트라이크를 올린다
 - [ ] 4볼이면 볼넷, 3스트라이크면 삼진으로 타석이 끝나고 카운트가 초기화된다
-- [ ] 볼카운트 로직은 노드 없이 단위 테스트할 수 있다
+- [ ] 볼카운트 로직은 DOM·Canvas 없이 단위 테스트할 수 있다
 - [ ] 구종별 속도·변화량과 제구 오차는 밸런스 설정에서 읽는다
 
 ---
 
 ## Implementation Notes
 
-- `PitchType` 데이터(Resource): 속도, 수평·수직 변화량
+- `PitchType` 데이터(JSON): 속도, 수평·수직 변화량
 - `PitchTrajectory`: 진행률 0~1 → 화면 좌표. Story 001의 공 모델을 대체한다.
 - `AtBatCount`: 공 하나의 결과를 받아 카운트를 갱신하고, 타석 종료 여부와 이유를 반환한다.
 
@@ -56,10 +56,10 @@
 
 ## Files
 
-- `src/pitching/pitch_type.gd`, `assets/data/pitches/*.tres`
-- `src/pitching/pitch_trajectory.gd`
-- `src/rules/at_bat_count.gd`
-- `tests/unit/pitching/strike_zone_test.gd`
+- `src/pitching/pitch_type.js`, `assets/data/pitches.json`
+- `src/pitching/pitch_trajectory.js`
+- `src/rules/at_bat_count.js`
+- `tests/unit/pitching/strike_zone_test.js`
 
 ---
 
@@ -74,7 +74,7 @@
 *`qa.level: minimal` — tests are advisory.*
 
 **Story Type**: Logic
-**Required evidence**: `tests/unit/pitching/strike_zone_test.gd` (advisory); retained screenshot showing a breaking pitch in `production/qa/evidence/`
+**Required evidence**: `tests/unit/pitching/strike_zone_test.js` (advisory); retained screenshot showing a breaking pitch in `production/qa/evidence/`
 
 **Status**: [ ] Not yet created
 
@@ -82,5 +82,5 @@
 
 ## Dependencies
 
-- Depends on: `production/epics/tuta-duel/story-001-mouse-aim-batting.md`
+- Depends on: `production/epics/tuta-duel/story-001-swipe-swing-batting.md`
 - Unlocks: `production/epics/tuta-duel/story-003-controllers-cpu-ai.md`, `production/epics/tuta-duel/story-004-player-pitching.md`

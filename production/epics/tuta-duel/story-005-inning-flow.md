@@ -17,7 +17,7 @@
 **ADR Decision Summary**: N/A (minimal — no ADRs)
 **ADR Version**: N/A (minimal — no ADRs)
 
-**Engine**: Godot 4.7 | **Risk**: HIGH
+**Engine**: Web (Canvas 2D, no engine) | **Risk**: LOW
 **Engine Notes**: none (no ADR engine-compatibility analysis at minimal)
 
 **Control Manifest Rules (this layer)**: N/A (minimal — no control manifest)
@@ -33,7 +33,7 @@
 - [ ] 홈을 밟은 주자마다 공격 팀 점수가 1 오른다
 - [ ] 3아웃이면 주자를 비우고 공수를 바꾼다: 초 = 플레이어 공격 / CPU 수비, 말 = CPU 공격 / 플레이어 수비
 - [ ] 말 공격이 끝나면 점수를 비교해 승리 / 패배 / 무승부를 정한다
-- [ ] 이닝 상태 머신은 노드 없이 단위 테스트할 수 있다
+- [ ] 이닝 상태 머신은 DOM·Canvas 없이 단위 테스트할 수 있다
 
 ---
 
@@ -54,9 +54,9 @@
 
 ## Files
 
-- `src/rules/inning_state.gd`
-- `src/game/match_flow.gd`, `src/game/match.tscn`
-- `tests/unit/game_flow/inning_state_test.gd`
+- `src/rules/inning_state.js`
+- `src/game/match_flow.js`
+- `tests/unit/game_flow/inning_state_test.js`
 
 ---
 
@@ -71,7 +71,7 @@
 *`qa.level: minimal` — tests are advisory.*
 
 **Story Type**: Logic
-**Required evidence**: `tests/unit/game_flow/inning_state_test.gd` (advisory)
+**Required evidence**: `tests/unit/game_flow/inning_state_test.js` (advisory)
 
 **Status**: [ ] Not yet created
 

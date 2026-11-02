@@ -17,7 +17,7 @@
 **ADR Decision Summary**: N/A (minimal — no ADRs)
 **ADR Version**: N/A (minimal — no ADRs)
 
-**Engine**: Godot 4.7 | **Risk**: HIGH
+**Engine**: Web (Canvas 2D, no engine) | **Risk**: LOW
 **Engine Notes**: none (no ADR engine-compatibility analysis at minimal)
 
 **Control Manifest Rules (this layer)**: N/A (minimal — no control manifest)
@@ -39,8 +39,8 @@
 
 ## Implementation Notes
 
-- HUD는 `InningState`의 신호만 구독해 표시한다 (로직을 들고 있지 않는다)
-- Main scene을 시작 화면으로 지정한다 (`project.godot` `run/main_scene`)
+- HUD는 `InningState`의 변경 콜백만 구독해 표시한다 (로직을 들고 있지 않는다)
+- `index.html`이 시작 화면을 띄운다
 
 ---
 
@@ -53,10 +53,10 @@
 
 ## Files
 
-- `src/ui/hud.gd`, `src/ui/hud.tscn`
-- `src/ui/title_screen.gd`, `src/ui/title_screen.tscn`
-- `src/ui/result_screen.gd`, `src/ui/result_screen.tscn`
-- `project.godot`
+- `src/ui/hud.js`
+- `src/ui/title_screen.js`
+- `src/ui/result_screen.js`
+- `index.html`
 
 ---
 

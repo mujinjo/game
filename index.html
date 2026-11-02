@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>싸발적인 투타대결</title>
+  <style>
+    html, body { margin: 0; height: 100%; background: #1d3b2a; overflow: hidden; }
+    #game { display: block; width: 100vw; height: 100vh; height: 100dvh; touch-action: none; user-select: none; -webkit-user-select: none; }
+    #message { position: fixed; inset: auto 16px 16px; padding: 12px; background: #000c; color: #fff; font: 14px system-ui, sans-serif; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="message" hidden></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "_doc": "Balance values for batting (design/game-brief.md MVP 2, story-001-swipe-swing-batting). Times are seconds, distances are CSS pixels, layout values are fractions of the canvas.",
+  "pitch": {
+    "travel_seconds": 0.85,
+    "late_grace_seconds": 0.25,
+    "result_display_seconds": 1.3,
+    "interval_seconds": 0.9,
+    "arrival_jitter_x": 0.25
+  },
+  "timing_windows": {
+    "_doc": "Upper bound of |swing time - ball arrival time| for each grade, best first. Anything slower than foul is a whiff.",
+    "perfect": 0.035,
+    "good": 0.07,
+    "ok": 0.11,
+    "foul": 0.16
+  },
+  "swipe": {
+    "_doc": "A drag shorter than min_distance_px counts as a tap (level swing). Within level_angle_deg of horizontal is a level swing; steeper is upper (up) or down (down).",
+    "min_distance_px": 28,
+    "level_angle_deg": 30
+  },
+  "ideal_swing": {
+    "_doc": "The swing type that best matches each pitch height.",
+    "high": "down",
+    "middle": "level",
+    "low": "upper"
+  },
+  "outcomes": {
+    "_doc": "Result for each swing type at each timing grade after the match adjustment. A grade of foul is always a foul.",
+    "upper": { "perfect": "home_run", "good": "double", "ok": "flyout" },
+    "level": { "perfect": "double", "good": "single", "ok": "flyout" },
+    "down": { "perfect": "single", "good": "single", "ok": "groundout" }
+  },
+  "layout": {
+    "_doc": "Positions as fractions of canvas width (x) and height (y); sizes as fractions of canvas height.",
+    "pitcher_x": 0.5,
+    "pitcher_y": 0.24,
+    "zone_center_x": 0.5,
+    "zone_center_y": 0.64,
+    "zone_width": 0.22,
+    "zone_height": 0.3,
+    "ball_radius": 0.022,
+    "ball_scale_start": 0.25,
+    "ball_scale_end": 1.0
+  }
+}
