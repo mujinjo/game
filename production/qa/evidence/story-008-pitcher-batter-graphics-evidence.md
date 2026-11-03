@@ -7,7 +7,7 @@
 |---|---|
 | 01-windup-leg-lift | Pitcher lifts the front leg, hands together at the chest |
 | 02-windup-cocked | Stride, throwing arm cocked back, glove arm out |
-| 03-ball-in-flight | Ball leaves the release hand; pitcher in follow-through; batter in stance |
+| 03-ball-in-flight | Ball leaves the release hand; pitcher in follow-through; batter in side stance (chest to the plate, helmet toward the pitcher) |
 | 04-contact-upper-low | Upper swing: bat crosses the low row at contact, ball on the barrel |
 | 05-contact-level-middle | Level swing: bat crosses the middle row |
 | 06-contact-down-high | Down swing: bat crosses the high row |

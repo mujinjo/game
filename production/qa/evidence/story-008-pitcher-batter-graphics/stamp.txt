@@ -1,6 +1,6 @@
 Reviewed-Content-Hash: src/view/pose_math.js da8ebbd0c409b297aa6567719dd194a00e41eee2
 Reviewed-Content-Hash: src/view/pitcher_sprite.js a76c1780929b4db2722ad17cd460d80c2efe0174
-Reviewed-Content-Hash: src/view/batter_sprite.js 1d07d42c74dccbcddd042536750b851614648ca7
+Reviewed-Content-Hash: src/view/batter_sprite.js 409a982ae3ef3fcefcc72deb7f4a4ee44ecced14
 Reviewed-Content-Hash: src/batting/batter_view.js bd752855830de1ac0559b5f7a9d0fd1ff4adc731
 Reviewed-Content-Hash: src/config/balance_config.js dd073332883d51f73939b64981d5613d32ce1b42
 Reviewed-Content-Hash: assets/data/balance_default.json a5cb27a1ff2c182a2bf3146d1ce1a0d790156200
